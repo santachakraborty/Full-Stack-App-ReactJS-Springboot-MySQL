@@ -47,25 +47,27 @@ public class BookController {
 		return ResponseEntity.ok(book);
 	}
 	
-	//update book rest api
+	// update book rest api
 	@PutMapping("/books/{id}")
-	public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails){
-		Book book = bookRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Book not found with " + id));
-	   
+	public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
+		Book book = bookRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Book not found with " + id));
+
 		book.setTitle(bookDetails.getTitle());
-	    book.setAuthor(bookDetails.getAuthor());
-	    book.setGenre(bookDetails.getGenre());
-	    book.setIsbn(bookDetails.getIsbn());
-	    
-	    Book updatedBook = bookRepository.save(book);  //storing all info into database
-	    return ResponseEntity.ok(updatedBook);   //returning updated book object to the client
+		book.setAuthor(bookDetails.getAuthor());
+		book.setGenre(bookDetails.getGenre());
+		book.setIsbn(bookDetails.getIsbn());
+
+		Book updatedBook = bookRepository.save(book); // storing all info into database
+		return ResponseEntity.ok(updatedBook); // returning updated book object to the client
 	}
-	
-	//delete book rest api
+
+	// delete book rest api
 	@DeleteMapping("/books/{id}")
-	public ResponseEntity<Map<String, Boolean>> deleteBook(@PathVariable Long id){
-		Book book = bookRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Book not found with " + id));
-	
+	public ResponseEntity<Map<String, Boolean>> deleteBook(@PathVariable Long id) {
+		Book book = bookRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Book not found with " + id));
+
 		bookRepository.delete(book);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
