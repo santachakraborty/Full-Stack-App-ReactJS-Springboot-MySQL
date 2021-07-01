@@ -10,7 +10,7 @@ Target audience:
 
 Technologies used:
 
-  FRONT END- HTML3, CSS5, ReactJS, React-Router, Axios, Bootstrap5.
+  FRONT END- HTML5, CSS3, ReactJS, React-Router, Axios, Bootstrap5.
 
   BACK END- MySQL MVC, Spring boot.
   
