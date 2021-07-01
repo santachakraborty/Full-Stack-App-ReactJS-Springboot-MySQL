@@ -11,7 +11,9 @@ Target audience:
 Technologies used:
 
   FRONT END- HTML3, CSS5, ReactJS, React-Router, Axios, Bootstrap5.
+
   BACK END- MySQL MVC, Spring boot.
+  
   TESTING TOOLS- Postman for back-end front-end interaction.
 
 Approach taken:

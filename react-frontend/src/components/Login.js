@@ -14,7 +14,7 @@ export default class Login extends Component {
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.loginClicked = this.loginClicked.bind(this)
      }
-     //function
+     //functions
      handleUserChange(e){
         this.setState({username:e.target.value})  
      }
